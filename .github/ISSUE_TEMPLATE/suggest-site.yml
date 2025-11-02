@@ -1,0 +1,39 @@
+name: Suggest a site
+description: Propose a website for the catalog
+title: "Suggest: "
+labels: [catalog]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Site name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Address
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: tab
+    attributes:
+      label: Which tab?
+      options:
+        - General
+        - Privacy
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      description: An existing category, or propose a new one.
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it belong?
+      description: For Privacy sites, mention what applies (open source, audited, jurisdiction, business model).
+    validations:
+      required: true

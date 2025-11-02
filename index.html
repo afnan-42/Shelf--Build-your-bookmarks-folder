@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Pick your favourite websites, organise them into folders and download one bookmarks file for any browser.">
+<title>Shelf: build your bookmark folders</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-tab="g">
+<header>
+  <div class="logo"><svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.5 3.5A1.5 1.5 0 0 1 3 2h3l1.5 1.5H13A1.5 1.5 0 0 1 14.5 5v7A1.5 1.5 0 0 1 13 13.5H3A1.5 1.5 0 0 1 1.5 12z"/></svg>Shelf</div>
+  <div id="tabs" role="tablist" aria-label="Catalog"></div>
+  <div class="tools">
+    <label class="sr" for="q">Search all sites</label>
+    <input id="q" type="search" placeholder="Search all sites" autocomplete="off">
+    <label class="sr" for="rg">Region</label>
+    <select id="rg" title="Region changes the shopping, news and finance lists"><option value="">Region: Global</option><option value="IN">Region: India</option><option value="US">Region: United States</option><option value="UK">Region: United Kingdom</option></select>
+  </div>
+</header>
+<main>
+  <div>
+    <h1>Pick your sites. Get one bookmarks file.</h1>
+    <p class="sub">No account, no tracking. Your picks stay in this tab until you download them.</p>
+    <p class="lbl">Start from a pack. You can combine them and edit afterwards.</p>
+    <div id="packs"></div>
+    <div id="cat"></div>
+  </div>
+  <aside aria-label="Your folders">
+    <h2>Your bookmarks</h2>
+    <p id="count"></p>
+    <div id="bar" aria-hidden="true"></div>
+    <div id="tree"></div>
+    <label class="opt" style="margin-bottom:4px"><input type="checkbox" id="tb" checked> Put folders on the bookmarks bar</label>
+    <p class="hint" style="margin:0 0 12px">Chromium browsers only place folders straight on the bar when the bar is empty. Otherwise everything lands inside “Imported”.</p>
+    <button id="dl" disabled>Download bookmarks file</button>
+    <div class="sec">
+      <button id="cp">Copy link</button>
+      <button id="sv">Save settings</button>
+      <label>Open settings<input id="op" type="file" accept=".json,application/json" class="sr"></label>
+    </div>
+    <input id="lk" readonly aria-label="Share link">
+    <p id="msg" role="status"></p>
+    <details><summary>How to import the file</summary>
+      <p>Chrome, Edge, Brave, Helium and other Chromium browsers: Settings, Import bookmarks, choose “Bookmarks HTML file”. If your bookmarks bar already has items, the browser puts everything inside an “Imported” folder. To avoid that, empty the bar before importing, or drag the folders out of “Imported” afterwards.</p>
+      <p>Firefox: Bookmarks, Manage bookmarks, Import and Backup, Import Bookmarks from HTML.</p>
+      <p>Safari: File, Import From, Bookmarks HTML File.</p>
+    </details>
+  </aside>
+</main>
+<footer>Shelf builds the file on your device and sends nothing anywhere.</footer>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
